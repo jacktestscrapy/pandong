@@ -1,0 +1,6 @@
+@mixin ellipsis {
+	// 文字以三个省略号显示
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
