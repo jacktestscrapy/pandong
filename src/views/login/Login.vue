@@ -43,18 +43,19 @@ export default {
     const { show, toastMessage, showToast } = useToastEffect();
     // 用户名和密码
     const data = reactive({
-      username: "",
-      password: "",
+      username: " ",
+      password: " ",
     });
+
     // 登录处理
     const handleLogin = async () => {
       //请求登录接口,调用封装的post接口
       try {
-        const result = post("/api/user/login", {
+        const result = await post("/api/user/login", {
           username: data.username,
           password: data.password,
-          // TODO 校验用户输入的用户名和密码
         });
+        console.log("登录", result.errno);
         // 判断返回值
         if (result?.errno === 0) {
           localStorage.isLogin = true;
@@ -72,13 +73,14 @@ export default {
     const handleRegister = () => {
       router.push({ name: "Register" });
     };
-    const torefsData = toRefs(data);
+    const { username, password } = toRefs(data);
     return {
       handleLogin,
       handleRegister,
       show,
       toastMessage,
-      ...torefsData,
+      password,
+      username,
     };
   },
 };
