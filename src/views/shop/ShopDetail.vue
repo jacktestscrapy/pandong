@@ -12,6 +12,7 @@
       </div>
     </div>
     <Shopinfo :item="item" :hideBorder="true" v-show="item.imgUrl" />
+    <Content />
   </div>
 </template>
 
@@ -19,6 +20,7 @@
 import { reactive, toRefs } from "@vue/reactivity";
 import { useRouter, useRoute } from "vue-router";
 import Shopinfo from "../../components/Shopinfo.vue";
+import Content from "./Content.vue";
 import { get } from "../../utils/request";
 
 const useGetShopDetailEffect = () => {
@@ -38,7 +40,7 @@ const useGetShopDetailEffect = () => {
 
 export default {
   name: "ShopDetail",
-  components: { Shopinfo },
+  components: { Shopinfo, Content },
   setup() {
     const { getShopDeatail, item } = useGetShopDetailEffect();
     getShopDeatail();
