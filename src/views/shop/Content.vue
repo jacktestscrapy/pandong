@@ -42,7 +42,7 @@
                 changeCartItem(shopId, item._id, item, 1, shopName);
               }
             "
-            >&#xe606;</span
+            >&#xe71f;</span
           >
         </div>
       </div>
