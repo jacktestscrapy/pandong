@@ -32,7 +32,7 @@
                 changeCartItem(shopId, item._id, item, -1, shopName);
               }
             "
-            >&#xe670;</span
+            >&#xe90a;</span
           >
           {{ getProductCartCount(shopId, item._id) }}
           <span

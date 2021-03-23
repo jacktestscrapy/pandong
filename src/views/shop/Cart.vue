@@ -1,5 +1,4 @@
 <template>
-  <!-- 设置遮罩 -->
   <div
     class="mask"
     v-if="showCart && calculations.total > 0"
@@ -14,7 +13,7 @@
         >
           <span
             class="product__header__icon iconfont"
-            v-html="calculations.allChecked ? '&#xe6f7;' : '&#xe652;'"
+            v-html="calculations.allChecked ? '&#xe652;' : '&#xe6f7;'"
           >
           </span>
           全选
@@ -30,7 +29,7 @@
       <div v-for="item in productList" :key="item._id" class="product__item">
         <div
           class="product__item__checked iconfont"
-          v-html="calculations.allChecked ? '&#xe6f7;' : '&#xe652;'"
+          v-html="item.check ? '&#xe652;' : '&#xe6f7;'"
           @click="() => changeCartItemChecked(shopId, item._id)"
         />
         <img class="product__item__img" :src="item.imgUrl" />
@@ -49,7 +48,7 @@
                 changeCartItemInfo(shopId, item._id, item, -1);
               }
             "
-            >&#xe670;</span
+            >&#xe90a;</span
           >
           {{ item.count || 0 }}
           <span
