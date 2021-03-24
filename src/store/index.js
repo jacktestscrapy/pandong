@@ -73,6 +73,7 @@ export default Vuex.createStore({
     clearCartData(state, shopId) {
       state.cartList[shopId].productList = {}
     },
+    // 修改地址
     changeAddressList(state, addressList) {
       state.addressList.splice(0, state.addressList.length, ...addressList)
     }
