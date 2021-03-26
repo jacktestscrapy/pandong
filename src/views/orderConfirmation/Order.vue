@@ -65,11 +65,11 @@ const useMakeOrderEffect = (shopId, shopName, productList, address) => {
         products,
       });
       if (result?.errno === 0) {
-        store.commit("clearCartData11", shopId);
+        store.commit("clearCartData", shopId);
         router.push({ name: "OrderList" });
       }
     } catch (e) {
-      // 提示下单失败
+      alert("下单失败,请重新尝试!");
     }
   };
   return { handleConfirmOrder };

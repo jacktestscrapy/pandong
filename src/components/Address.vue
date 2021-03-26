@@ -7,7 +7,7 @@
     <div class="address__detail">
       {{ address.city }}{{ address.department }}{{ address.houseNumber }}
     </div>
-    <div class="iconfont address__icon">&#xe6f2;</div>
+    <div class="iconfont address__icon">&#xe65e;</div>
   </div>
 </template>
 

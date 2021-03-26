@@ -42,7 +42,35 @@ const routes = [
     name: 'ChoseAddressList',
     component: ()=>import(/* webpackChunkName: "chooseAddressList" */ '../views/choseAddressList/ChoseAddressList.vue'),
 
-  }
+  },
+  {
+    path: '/cartList',
+    name: 'CartList',
+    component: () => import(/* webpackChunkName: "cartList" */ '../views/cartList/CartList')
+  },
+  {
+    path: '/orderList/',
+    name: 'OrderList',
+    component: ()=>import(/* webpackChunkName: "orderList" */ '../views/orderList/OrderList.vue'),
+
+  },
+  {
+    path: '/personalInfo/',
+    name: 'PersonalInfo',
+    component: ()=>import(/* webpackChunkName: "personalInfo" */ '../views/personalInfo/PersonalInfo.vue'),
+
+  },
+  {
+    path: '/myAddressList',
+    name: 'MyAddressList',
+    component: ()=>import(/* webpackChunkName: "myAddressList" */ '../views/myAddressList/MyAddressList.vue'),
+
+  },
+  {
+    path: '/upsertAddress/:id?',
+    name: 'UpsertAddress',
+    component: () => import(/* webpackChunkName: "upsertAddress" */ '../views/upsertAddress/UpsertAddress'),
+  },
 ]
 
 const router = createRouter({

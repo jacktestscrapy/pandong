@@ -8,8 +8,10 @@
       }"
       :key="item.icon"
     >
-      <div class="iconfont" v-html="item.icon" />
-      <div class="docker__title">{{ item.text }}</div>
+      <router-link :to="item.to">
+        <div class="iconfont" v-html="item.icon" />
+        <div class="docker__title">{{ item.text }}</div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -20,10 +22,10 @@ export default {
   props: ["currentIndex"],
   setup() {
     const dockerList = [
-      { icon: "&#xe62b;", text: "首页" },
-      { icon: "&#xe750;", text: "购物车" },
-      { icon: "&#xe61e;", text: "订单" },
-      { icon: "&#xe660;", text: "我的" },
+      { icon: "&#xe62b;", text: "首页", to: { name: "Home" } },
+      { icon: "&#xe750;", text: "购物车", to: { name: "CartList" } },
+      { icon: "&#xe61e;", text: "订单", to: { name: "OrderList" } },
+      { icon: "&#xe660;", text: "我的", to: { name: "PersonalInfo" } },
     ];
     return { dockerList };
   },
